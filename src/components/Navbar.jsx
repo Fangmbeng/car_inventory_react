@@ -27,7 +27,6 @@ export default function Navbar (props) {
             {props.loggedIn ? (
                 <>
                 <Link className='nav-link text-success' to='/form'>Engines</Link>
-                <Link className='nav-link text-danger' to='/edit'>Edit Inventory</Link>
                 <Link className='nav-link text-primary' to='/create'>Add Invzntory</Link>
                 <Link className='nav-link text-warning' to='/' onClick={props.logUserOut}>Log Out</Link>
                 </>
