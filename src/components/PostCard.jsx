@@ -15,17 +15,19 @@ export default function PostCard ({ post, flashMessage }) {
         let id = post.id;
         let brand = post.brand;
         let model = post.model;
+        console.log(id)
 
         // Get the token from localStorage
         let token = localStorage.getItem('token');
 
         let myHeaders = new Headers();
         myHeaders.append('Content-Type', 'application/json')
-        myHeaders.append('Authorization', `Bearer ${token}`);
+        myHeaders.append('Authorization', `Bearer ${token}`)
+        myHeaders.append('Access-Control-Allow-Origin', "*");
 
         let requestBody = JSON.stringify({brand, model})
         // Make the fetch request
-        let response = await fetch(`https://car-model-ihwy.onrender.com/api/post/delete/${id}`, {
+        let response = await fetch(`https://car-model-ihwy.onrender.com//api/post/delete/${id}`, {
             method: 'POST',
             headers: myHeaders,
             body: requestBody

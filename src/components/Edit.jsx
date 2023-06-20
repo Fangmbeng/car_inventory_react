@@ -26,7 +26,8 @@ export default function Edit (props) {
         // Set up the request headers
         let myHeaders = new Headers();
         myHeaders.append('Content-Type', 'application/json')
-        myHeaders.append('Authorization', `Bearer ${token}`);
+        myHeaders.append('Authorization', `Bearer ${token}`)
+        myHeaders.append('Access-Control-Allow-Origin', "*");;
 
         // Set up the request body
     
@@ -38,7 +39,7 @@ export default function Edit (props) {
         let requestBody = JSON.stringify({brand, model, id})
 
         // Make the fetch request
-        let response = await fetch(`http://127.0.0.1:5000/api/post/edit/${id}`, {
+        let response = await fetch(`https://car-model-ihwy.onrender.com/api/post/edit/${id}`, {
             method: 'POST',
             headers: myHeaders,
             body: requestBody

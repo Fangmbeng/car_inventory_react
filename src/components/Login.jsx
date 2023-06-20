@@ -15,7 +15,7 @@ export default function Login(props) {
         let myHeaders = new Headers();
         myHeaders.append('Authorization', `Basic ${btoa(stringToEncode)}`);
 
-        let response = await fetch("http://127.0.0.1:5000/api/token", {
+        let response = await fetch("https://car-model-ihwy.onrender.com/api/token", {
             headers: myHeaders
         })
 
