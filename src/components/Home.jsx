@@ -6,7 +6,7 @@ export default function Home(props) {
 
    // eslint-disable-next-line no-undef
    useEffect(() => {
-        fetch("http://127.0.0.1:5000/api/posts")
+        fetch("https://car-model-ihwy.onrender.com/api/posts")
             .then(res => res.json())
             .then(data => setPosts(data))
     },[])
