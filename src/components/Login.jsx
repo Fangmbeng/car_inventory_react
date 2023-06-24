@@ -50,7 +50,7 @@ export default function Login(props) {
                     <input type="submit" value="Log In" className="btn btn-success" />
                 </div>
             </form>
-            <button className='btn btn-success m-3' onClick={props.handleClick}>Sign In with Google</button>
+            <button className='btn btn-primary mt-3' onClick={props.handleClick}>Sign In with Google</button>
         </>
     )
 }

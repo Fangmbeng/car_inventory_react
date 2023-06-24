@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PostCard from './PostCard';
+import { Link } from 'react-router-dom'
 
 export default function Home(props) {
     const [posts, setPosts] = useState([]);
@@ -19,7 +20,9 @@ export default function Home(props) {
             {posts.map( post => <PostCard key={post.id} post={post} flashMessage={props.flashMessage}/>)}
             </>
         ) : (
-            <>         
+            <>    
+            <h1 className="text-center">Welcome Mercy's Motors</h1>
+            <Link className='btn btn-warning' to='/login'>Login to Acess Inventory</Link>
             </>
         )}
         </>
