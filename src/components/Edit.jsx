@@ -5,7 +5,7 @@ export default function Edit (props) {
 
   const navigate = useNavigate();
     useEffect(() => {
-        if (!props.loggedIn){
+        if (!(props.loggedIn || props.value)){
             //props.flashMessage('You must be logged in to view this page', 'danger');
             navigate('/');
         }
@@ -21,12 +21,12 @@ export default function Edit (props) {
         let id = localStorage.getItem("id")
 
         // Get the token from localStorage
-        let token = localStorage.getItem('token');
+        //let token = localStorage.getItem('token');
 
         // Set up the request headers
         let myHeaders = new Headers();
         myHeaders.append('Content-Type', 'application/json')
-        myHeaders.append('Authorization', `Bearer ${token}`)
+        //myHeaders.append('Authorization', `Bearer ${token}`)
         myHeaders.append('Access-Control-Allow-Origin', "*");;
 
         // Set up the request body

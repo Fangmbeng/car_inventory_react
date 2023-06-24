@@ -13,8 +13,15 @@ export default function Home(props) {
 
     return (
         <>
-            <h1 className="text-center">Welcome to Mercy Motors</h1>
+        {props.loggedIn || props.value ? (
+            <>
+            <h1 className="text-center">Mercy's Motors Inventory</h1>
             {posts.map( post => <PostCard key={post.id} post={post} flashMessage={props.flashMessage}/>)}
+            </>
+        ) : (
+            <>         
+            </>
+        )}
         </>
     )
 }

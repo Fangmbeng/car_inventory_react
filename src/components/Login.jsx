@@ -47,10 +47,10 @@ export default function Login(props) {
                 <div className="form-group">
                     <input type="text" className="form-control my-3" placeholder='Enter Username' name='username' />
                     <input type="password" className="form-control my-3" placeholder='Enter Password' name='password' />
-
-                    <input type="submit" value="Log In" className="btn btn-success w-100" />
+                    <input type="submit" value="Log In" className="btn btn-success" />
                 </div>
             </form>
+            <button className='btn btn-success m-3' onClick={props.handleClick}>Sign In with Google</button>
         </>
     )
 }

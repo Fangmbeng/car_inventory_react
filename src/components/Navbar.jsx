@@ -24,7 +24,7 @@ export default function Navbar (props) {
             <Link className="navbar-brand" to="/"> Welcome Stranger</Link>
             }
             <Link className='nav-link text-danger-emphasis' to='/'>Home</Link>
-            {props.loggedIn ? (
+            {props.loggedIn || props.value ? (
                 <>
                 <Link className='nav-link text-success' to='/form'>Engines</Link>
                 <Link className='nav-link text-primary' to='/create'>Add Invzntory</Link>
@@ -33,7 +33,8 @@ export default function Navbar (props) {
             ) : (
                 <>
                 <Link className='nav-link text-success-emphasis' to='/sign_up'>Sign Up</Link>
-                <Link className='nav-link text-primary-emphasis' to='/login'>Log In</Link>              </>
+                <Link className='nav-link text-primary-emphasis' to='/login'>Log In</Link>              
+                </>
             )}
             <form action="" className="row" onSubmit={handleForm}>
                 <div className="col">

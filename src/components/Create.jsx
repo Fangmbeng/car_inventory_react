@@ -5,7 +5,7 @@ export default function CreatePost(props) {
 
     const navigate = useNavigate();
     useEffect(() => {
-        if (!props.loggedIn){
+        if (!(props.loggedIn || props.value)){
             props.flashMessage('You must be logged in to view this page', 'danger');
             navigate('/login');
         }
@@ -20,19 +20,19 @@ export default function CreatePost(props) {
         let model = event.target.model.value;
 
         // Get the token from localStorage
-        let token = localStorage.getItem('token');
+        //let token = localStorage.getItem('token');
 
         // Set up the request headers
         let myHeaders = new Headers();
         myHeaders.append('Content-Type', 'application/json')
-        myHeaders.append('Authorization', `Bearer ${token}`)
+        //myHeaders.append('Authorization', `Bearer ${token}`)
         myHeaders.append('Access-Control-Allow-Origin', "*");
 
         // Set up the request body
         let requestBody = JSON.stringify({brand, model})
 
         // Make the fetch request
-        let response = await fetch("https://car-model-ihwy.onrender.com//api/posts", {
+        let response = await fetch("https://car-model-ihwy.onrender.com/api/posts", {
             method: 'POST',
             headers: myHeaders,
             body: requestBody
