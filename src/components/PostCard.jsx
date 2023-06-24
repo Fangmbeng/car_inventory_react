@@ -35,8 +35,8 @@ export default function PostCard ({ post, flashMessage }) {
 
         if (response.ok){
             flashMessage(`Car brand has been deleted`, 'primary')
-            setTimeout(() => {}, 1000)
-            window.location.reload()
+            setTimeout((() => {}), 1000)
+            navigate('/')
 
         } else {
             flashMessage("There was an issue, please try again", 'warning');
