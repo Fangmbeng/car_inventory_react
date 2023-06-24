@@ -22,7 +22,9 @@ export default function Home(props) {
         ) : (
             <>    
             <h1 className="text-center">Welcome Mercy's Motors</h1>
+            <div className="position-absolute top-50 start-50 translate-middle">
             <Link className='btn btn-warning' to='/login'>Login to Acess Inventory</Link>
+            </div>
             </>
         )}
         </>
